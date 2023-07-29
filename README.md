@@ -1,8 +1,14 @@
 ## Levantar el proyecto
 Para iniciar el proyecto, ejecuta el siguiente comando en la raíz del proyecto:
 ```bash
+git clone https://github.com/fgplastina/transaction-app-fastapi/
+```
+Build e inicio del docker-compose
+```bash
 docker-compose up -d
 ```
+
+## Gestionar la base de datos por primera vez
 ###### Eliminar cualquier conexion a la DB
 ```bash
 docker exec -it transaction-app-postgresql psql -U  postgres -d postgres -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = 'transaction-appdb';"
@@ -19,7 +25,7 @@ docker exec -it transaction-app-postgresql psql -U postgres -d postgres -c "CREA
 ```bash
 cat dump.sql | docker exec -i transaction-app-postgresql psql -U postgres -d transaction-appdb
 ```
-#### Ver los logs del server
+## Visualizar los logs del server
 ```bash
 docker attach transaction-app-fastapi
 ```
