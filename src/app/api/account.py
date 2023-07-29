@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Path
+from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 
 from app.api.schemas import USDAccountSchema

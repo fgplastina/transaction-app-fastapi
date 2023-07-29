@@ -12,8 +12,6 @@ from sqlalchemy import (
     Table,
     create_engine,
 )
-from sqlalchemy.orm import foreign
-from sqlalchemy.sql import func
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 

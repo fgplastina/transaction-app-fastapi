@@ -34,7 +34,7 @@ async def create_movement(payload: MovementSchema):
 async def read_movement(id: int = Path(..., gt=0)):
     movement = await movement_crud.get(id)
     if not movement:
-        return JSONResponse(status_code=404, content={"reason": "Movement not found"})
+        return JSONResponse(status_code=404, content={"reason": "Movimiento no encontrado"})
     return movement
 
 
@@ -43,7 +43,7 @@ async def delete_movement(id: int):
     movement = await movement_crud.get(id)
 
     if not movement:
-        return JSONResponse(status_code=404, content={"reason": "Movement not found"})
+        return JSONResponse(status_code=404, content={"reason": "Movimiento no encontrado"})
 
     await movement_crud.delete(id)
 

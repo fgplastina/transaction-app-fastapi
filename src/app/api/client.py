@@ -30,7 +30,7 @@ async def create_client(payload: ClientSchema):
 async def read_client(id: int = Path(..., gt=0)):
     client = await client_crud.get(id)
     if not client:
-        return JSONResponse(status_code=404, content={"detail": "Client not found"})
+        return JSONResponse(status_code=404, content={"detail": "Cliente no encontrado"})
     return client
 
 
@@ -43,7 +43,7 @@ async def read_all_clients():
 async def update_client(id: int, payload: ClientSchema):
     client = await client_crud.get(id)
     if not client:
-        return JSONResponse(status_code=404, content={"detail": "Client not found"})
+        return JSONResponse(status_code=404, content={"detail": "Cliente no encontrado"})
 
     client_id = await client_crud.put(id, payload)
 
@@ -59,7 +59,7 @@ async def delete_client(id: int):
     client = await client_crud.get(id)
 
     if not client:
-        return JSONResponse(status_code=404, content={"detail": "Client not found"})
+        return JSONResponse(status_code=404, content={"detail": "Cliente no encontrado"})
 
     await client_crud.delete(id)
 

@@ -51,7 +51,7 @@ def test_read_client_incorrect_id(test_app, monkeypatch):
 
     response = test_app.get("/clients/999")
     assert response.status_code == 404
-    assert response.json()["reason"] == "Client not found"
+    assert response.json()["detail"] == "Cliente no encontrado"
 
 
 def test_read_all_clients(test_app, monkeypatch):
@@ -136,4 +136,4 @@ def test_remove_client_incorrect_id(test_app, monkeypatch):
 
     response = test_app.delete("/clients/999/")
     assert response.status_code == 404
-    assert response.json()["reason"] == "Client not found"
+    assert response.json()["detail"] == "Cliente no encontrado"
