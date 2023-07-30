@@ -1,5 +1,5 @@
 ## Levantar el proyecto
-Para iniciar el proyecto, ejecuta el siguiente comando en la raíz del proyecto:
+Descargar el proyecto
 ```bash
 git clone https://github.com/fgplastina/transaction-app-fastapi/
 ```
